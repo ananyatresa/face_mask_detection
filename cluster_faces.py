@@ -19,14 +19,14 @@ clt.fit(encodings)
 # determine the total number of unique faces found in the dataset
 labelIDs = np.unique(clt.labels_)
 numUniqueFaces = len(np.where(labelIDs > -1)[0])
-print("[INFO] # unique faces: {}".format(numUniqueFaces))
+print("# unique faces: {}".format(numUniqueFaces))
 
 # loop over the unique face integers
 for labelID in labelIDs:
     # find all indexes into the `data` array that belong to the
     # current label ID, then randomly sample a maximum of 25 indexes
     # from the set
-    print("[INFO] faces for face ID: {}".format(labelID))
+    print("faces for face ID: {}".format(labelID))
     idxs = np.where(clt.labels_ == labelID)[0]
     idxs = np.random.choice(idxs, size=min(25, len(idxs)), replace=False)
 
@@ -41,8 +41,8 @@ for labelID in labelIDs:
         # faces montage list
         face = cv2.resize(face, (96, 96))
         faces.append(face)
-        serial=0000
-        finalfacestore=r"C:\Users\tauru\OneDrive\Desktop\project\face_mask_detector\final_face_store\face_"+ str(serial+i) +".jpg"
+        serial= 0
+        finalfacestore=r"C:\Users\tauru\OneDrive\Desktop\project\face_mask_detector\final_face_store\face_000"+ str(serial+i) +".jpg"
     cv2.imwrite(finalfacestore,faces[0])
 
     # create a montage using 96x96 "tiles" with 5 rows and 5 columns
