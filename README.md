@@ -1,3 +1,3 @@
-# face_mask_detection
-Modified model code from pyimagesearch.
-Current objective is to capture face from video after detecting non_face masker.
+# FACE MASK DETECTION AND CAPTURE
+
+Detects whether a person wears a mask or not. If the person is not wearing a mask, the face is captured and stored
