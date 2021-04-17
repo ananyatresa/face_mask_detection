@@ -5,18 +5,7 @@ import pickle
 import cv2
 import os
 
-'''
-# construct the argument parser and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--dataset", required=True,
-	help="path to input directory of faces + images")
-ap.add_argument("-e", "--encodings", required=True,
-	help="path to serialized db of facial encodings")
-ap.add_argument("-d", "--detection-method", type=str, default="cnn",
-	help="face detection model to use: either `hog` or `cnn`")
-args = vars(ap.parse_args())
 
-'''
 
 dataset=r"C:\Users\tauru\OneDrive\Desktop\project\face_mask_detector\face-store"
 
@@ -33,7 +22,7 @@ data = []
 for (i, imagePath) in enumerate(imagePaths):
 	# load the input image and convert it from RGB (OpenCV ordering)
 	# to dlib ordering (RGB)
-    print("[INFO] processing image {}/{}".format(i + 1,
+    print("processing image {}/{}".format(i + 1,
     	len(imagePaths)))
     print(imagePath)
     image = cv2.imread(imagePath)
@@ -48,7 +37,7 @@ for (i, imagePath) in enumerate(imagePaths):
     data.extend(d)
 
 # dump the facial encodings data to disk
-print("[INFO] serializing encodings...")
+print("serializing encodings...")
 f = open(encoding_path, "wb")
 f.write(pickle.dumps(data))
 f.close()
