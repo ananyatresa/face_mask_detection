@@ -56,13 +56,13 @@ def button1_clicked(m):
         return (locs, preds)
 
     print("loading face detector model...")
-    prototxtPath = r"deploy.prototxt"
-    weightsPath = r"res10_300x300_ssd_iter_140000.caffemodel"
+    prototxtPath = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\deploy.prototxt"
+    weightsPath = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\res10_300x300_ssd_iter_140000.caffemodel"
     faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
     # load the face mask detector model from disk
     print("loading face mask detector model...")
-    maskNet = load_model("mask_detector.model")
+    maskNet = load_model("D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\mask_detector.model")
 
     print("starting video stream...")
     vs = VideoStream(src=0).start()
