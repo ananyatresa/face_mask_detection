@@ -13,6 +13,7 @@ import PIL
 from PIL import Image,ImageTk
 
 
+
 width, height = 200, 300
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
