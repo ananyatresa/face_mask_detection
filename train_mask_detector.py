@@ -25,7 +25,7 @@ INIT_LR = 1e-4
 EPOCHS = 20
 BS = 32
 
-DIRECTORY = r"C:\Users\tauru\OneDrive\Desktop\project\face-mask-detector\dataset"
+DIRECTORY = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\dataset"
 CATEGORIES = ["with_mask", "without_mask"]
 
 # grab the list of images in our dataset directory, then initialize
