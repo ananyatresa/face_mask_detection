@@ -10,7 +10,7 @@ import shutil
 def cluster_faces():
     print("LOADING ENCODINGS")
     data = pickle.loads(
-        open(r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\encodings.pickle", "rb").read())
+        open(r"encodings.pickle", "rb").read())
     data = np.array(data)
     encodings = [d["encoding"] for d in data]
 
@@ -43,7 +43,7 @@ def cluster_faces():
             face = cv2.resize(face, (96, 96))
             faces.append(face)
             serial = 0000
-            finalfacestore = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\final_face_store\face_" + str(
+            finalfacestore = r"final_face_store\face_" + str(
                 serial + i) + ".jpg"
         cv2.imwrite(finalfacestore, faces[0])
 
@@ -56,9 +56,9 @@ def cluster_faces():
         cv2.waitKey(0)
 
 def encode_faces():
-    dataset = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\face-store"
+    dataset = r"face-store"
 
-    encoding_path = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\encodings.pickle"
+    encoding_path = r"encodings.pickle"
 
     # grab the paths to the input images in our dataset, then initialize
     # out data list (which we'll soon populate)
@@ -91,7 +91,7 @@ def encode_faces():
     f.close()
 
 def delete_faces():
-    folder = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\face-store"
+    folder = r"face-store"
     for filename in os.listdir(folder):
         file_path = os.path.join(folder, filename)
         try:
