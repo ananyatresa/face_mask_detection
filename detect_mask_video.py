@@ -34,7 +34,7 @@ class App(tk.Frame):
         parent.geometry("550x550")
         parent.grid_rowconfigure([2,2], weight = 1)
         parent.grid_columnconfigure(0, weight = 1)       
-        self.path=r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\final_face_store"
+        self.path=r"final_face_store"
 
 #Creating tkinter GUI, labels, buttons
     def create_ui(self):
