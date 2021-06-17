@@ -34,7 +34,7 @@ class App(tk.Frame):
         parent.geometry("550x550")
         parent.grid_rowconfigure([2,2], weight = 1)
         parent.grid_columnconfigure(0, weight = 1)       
-        self.path=r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\final_face_store"
+        self.path=r"final_face_store"
 
 #Creating tkinter GUI, labels, buttons
     def create_ui(self):
@@ -136,12 +136,12 @@ class App(tk.Frame):
         cap = cv2.VideoCapture(0)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
-        prototxtPath = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\deploy.prototxt"
-        weightsPath = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\res10_300x300_ssd_iter_140000.caffemodel"
+        prototxtPath = r"deploy.prototxt"
+        weightsPath = r"res10_300x300_ssd_iter_140000.caffemodel"
         faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
         # load the face mask detector model from disk
         print("loading face mask detector model...")
-        maskNet = load_model(r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\mask_detector.model")
+        maskNet = load_model(r"mask_detector.model")
         print("starting video stream...")
 
         while self.is_running:
@@ -168,7 +168,7 @@ class App(tk.Frame):
 
                 if mask < withoutMask:
                     sub_face = frame[startY:endY, startX:endX]
-                    FaceFileName = r"D:\ANANYA\College\FINAL YEAR Project\Face mask model\git copy\face_mask_detection\face-store\face_" + str(startY) + ".jpg"
+                    FaceFileName = r"face-store\face_" + str(startY) + ".jpg"
                     cv2.imwrite(FaceFileName, sub_face)
 
             image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
